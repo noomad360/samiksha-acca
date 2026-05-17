@@ -12,7 +12,6 @@ export const Route = createFileRoute("/results")({
     ],
   }),
   component: ResultsPage,
-  ssr: false,
 });
 
 type StoredAnswer = string | string[] | number | null;
