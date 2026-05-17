@@ -2,6 +2,7 @@ export type Question =
   | {
       id: number;
       type: "mcq";
+      section?: "A" | "B";
       prompt: string;
       options: { key: string; text: string }[];
       correct: string;
@@ -11,6 +12,7 @@ export type Question =
   | {
       id: number;
       type: "multi";
+      section?: "A" | "B";
       prompt: string;
       options: { key: string; text: string }[];
       correct: string[];
@@ -20,12 +22,23 @@ export type Question =
   | {
       id: number;
       type: "numeric";
+      section?: "A" | "B";
       prompt: string;
       correct: number;
       tolerance?: number;
       unit?: string;
       explanation: string;
       marks?: number;
+    }
+  | {
+      id: number;
+      type: "long";
+      section: "B";
+      title: string;
+      prompt: string;
+      requirements: { label: string; text: string; marks: number }[];
+      markingGuide: string;
+      marks: number;
     };
 
 export const questions: Question[] = [
@@ -50,8 +63,14 @@ export const questions: Question[] = [
     prompt: "Which TWO of the following errors would result in a trial balance imbalance?",
     options: [
       { key: "A", text: "Discounts received balance was listed as a debit on the trial balance" },
-      { key: "B", text: "Dividend paid ledger balance of $970 was recorded in the trial balance as $790" },
-      { key: "C", text: "A contra settlement was recorded in the receivables and payables ledgers but not in the control accounts" },
+      {
+        key: "B",
+        text: "Dividend paid ledger balance of $970 was recorded in the trial balance as $790",
+      },
+      {
+        key: "C",
+        text: "A contra settlement was recorded in the receivables and payables ledgers but not in the control accounts",
+      },
       { key: "D", text: "Capital expenditure was posted to repairs" },
     ],
     correct: ["A", "B"],
@@ -96,7 +115,10 @@ export const questions: Question[] = [
     prompt: "Which of the following statements in relation to bank reconciliations is true?",
     options: [
       { key: "A", text: "Unpresented cheques are added to the balance on the bank statement" },
-      { key: "B", text: "Dishonoured cheques from customers are adjusted for by debiting the cash book" },
+      {
+        key: "B",
+        text: "Dishonoured cheques from customers are adjusted for by debiting the cash book",
+      },
       { key: "C", text: "Unrecorded direct debits are adjusted for by crediting the cash book" },
       { key: "D", text: "Bank charges on the bank statement but not in the cash book are ignored" },
     ],
@@ -150,8 +172,14 @@ export const questions: Question[] = [
     options: [
       { key: "A", text: "The extended trial balance is not a book of prime entry" },
       { key: "B", text: "Only cash purchases are recorded in the purchases day book" },
-      { key: "C", text: "Contra entries with credit customers who are also suppliers affect both ledger balances" },
-      { key: "D", text: "Settlement discount received is included as part of a trade payables’ control account" },
+      {
+        key: "C",
+        text: "Contra entries with credit customers who are also suppliers affect both ledger balances",
+      },
+      {
+        key: "D",
+        text: "Settlement discount received is included as part of a trade payables’ control account",
+      },
     ],
     correct: "B",
     explanation: "Credit purchases — not cash purchases — are recorded in the purchases day book.",
@@ -297,8 +325,7 @@ export const questions: Question[] = [
   {
     id: 21,
     type: "multi",
-    prompt:
-      "A Co owns 60% of B Co and 40% of C Co. Which TWO statements are most likely true?",
+    prompt: "A Co owns 60% of B Co and 40% of C Co. Which TWO statements are most likely true?",
     options: [
       { key: "A", text: "B Co is an associate of A Co" },
       { key: "B", text: "B Co is a subsidiary of A Co" },
@@ -324,7 +351,8 @@ export const questions: Question[] = [
       "Car bought 1 Jan 20X0 for $5,000; SL depreciation 25% p.a. Sold 31 Dec 20X2 for $500. Profit/(loss) on disposal? (enter loss as negative)",
     correct: -750,
     unit: "$",
-    explanation: "Dep = 1,250/yr. CA at disposal = 5,000 – 3 × 1,250 = 1,250. Loss = 500 – 1,250 = $(750).",
+    explanation:
+      "Dep = 1,250/yr. CA at disposal = 5,000 – 3 × 1,250 = 1,250. Loss = 500 – 1,250 = $(750).",
   },
   {
     id: 24,
@@ -393,11 +421,15 @@ export const questions: Question[] = [
     options: [
       { key: "A", text: "A present obligation arising from a past event" },
       { key: "B", text: "An obligation that will arise from a future event" },
-      { key: "C", text: "A present economic resource controlled by the entity as a result of past events" },
+      {
+        key: "C",
+        text: "A present economic resource controlled by the entity as a result of past events",
+      },
       { key: "D", text: "A resource controlled by an entity that will arise from a future event" },
     ],
     correct: "C",
-    explanation: "An asset is a present economic resource controlled by the entity as a result of past events.",
+    explanation:
+      "An asset is a present economic resource controlled by the entity as a result of past events.",
   },
   {
     id: 30,
@@ -411,7 +443,8 @@ export const questions: Question[] = [
       { key: "D", text: "Nothing relevant for investing" },
     ],
     correct: "B",
-    explanation: "Only the $3,000 cash inflow is investing. Loss on disposal is an operating activities adjustment.",
+    explanation:
+      "Only the $3,000 cash inflow is investing. Loss on disposal is an operating activities adjustment.",
   },
   {
     id: 31,
@@ -431,7 +464,8 @@ export const questions: Question[] = [
   {
     id: 32,
     type: "mcq",
-    prompt: "James overstated a year-end accrual. After correction, how are net profit and net assets affected?",
+    prompt:
+      "James overstated a year-end accrual. After correction, how are net profit and net assets affected?",
     options: [
       { key: "A", text: "Net profit increased; Net assets increased" },
       { key: "B", text: "Net profit increased; Net assets decreased" },
@@ -481,6 +515,67 @@ export const questions: Question[] = [
     ],
     correct: "B",
     explanation: "Goodwill IS calculated when acquiring a subsidiary.",
+  },
+  {
+    id: 36,
+    type: "long",
+    section: "B",
+    title: "Poodle Group consolidated statement of financial position extracts",
+    marks: 15,
+    prompt:
+      "On 1 January 20X1, Poodle acquired 80% of the ordinary shares of Setter for $270,000.\n\nStatements of financial position as at 30 June 20X4:\n\nPoodle: property, plant and equipment $450,000; investments $300,000; inventories $75,000; trade and other receivables $32,000; cash and cash equivalents $3,000; issued share capital $100,000; share premium $20,000; retained earnings $490,000; loans $150,000; trade and other payables $100,000.\n\nSetter: property, plant and equipment $321,825; inventories $45,500; trade and other receivables $43,175; issued share capital $50,000; share premium $10,000; retained earnings $250,500; loans $17,500; trade and other payables $71,425; bank overdraft $11,075.\n\nRelevant information:\n- At acquisition, Setter's retained earnings were $157,500 and the fair value of the non-controlling interest was $63,500.\n- At acquisition, the fair value of land owned by Setter exceeded its carrying amount by $100,000. The land was still owned at 30 June 20X4.\n- During the year, Poodle sold goods to Setter for $20,000 at a mark-up on cost of 25%. All goods remained in Setter's inventory at year end. The sale was on credit and unpaid at 30 June 20X4.",
+    requirements: [
+      {
+        label: "(a)",
+        marks: 8.5,
+        text: "Calculate the consolidated amounts for property, plant and equipment; inventories; receivables; retained earnings; and payables.",
+      },
+      {
+        label: "(b)",
+        marks: 1,
+        text: "Choose the correct calculation of investments for the consolidated statement of financial position: (i) $300,000 + $270,000; (ii) $300,000 - $270,000; (iii) $300,000.",
+      },
+      {
+        label: "(c)",
+        marks: 2,
+        text: "Choose the correct formula for goodwill on consolidation from the options in the question PDF.",
+      },
+      {
+        label: "(d)",
+        marks: 1.5,
+        text: "Choose the correct formula for non-controlling interest from the options in the question PDF.",
+      },
+      {
+        label: "(e)",
+        marks: 2,
+        text: "State whether these are true or false: goodwill on consolidation is a tangible non-current asset; non-controlling interest is a liability.",
+      },
+    ],
+    markingGuide:
+      "Key answers: PPE $871,825; inventories $116,500; receivables $55,175; retained earnings $560,400; payables $151,425. Investments: option (ii), $300,000 - $270,000. Goodwill formula: consideration paid plus fair value of NCI at acquisition less fair value of net assets at acquisition. NCI formula: fair value of NCI at acquisition plus NCI percentage of the post-acquisition change in fair value of net assets. True/false: goodwill as tangible non-current asset is false; NCI as liability is false. Workings include post-acquisition net assets of $93,000, PURP of $4,000, goodwill of $16,000, and NCI of $82,100.",
+  },
+  {
+    id: 37,
+    type: "long",
+    section: "B",
+    title: "Buzzard Co financial statements",
+    marks: 15,
+    prompt:
+      "The trial balance for Buzzard Co as at 30 September 20X6 is:\n\nRevenue $360,250 credit; retained earnings $64,000 credit; purchases $145,380 debit; administrative expenses $67,300 debit; distribution costs $42,815 debit; plant and machinery cost $199,850 debit; plant and machinery accumulated depreciation at 1 October 20X5 $48,000 credit; trade receivables $47,450 debit; allowance for receivables at 1 October 20X5 $2,500 credit; inventory at 1 October 20X5 $20,000 debit; dividend paid $3,000 debit; trade payables $27,795 credit; issued share capital at $1 shares $20,000 credit; income tax $1,000 debit; bank overdraft $2,250 credit.\n\nAdditional information:\n- Inventory at 30 September 20X6 cost $23,500. Included within this are items costing $5,000 which can be sold for only $3,500.\n- The allowance for receivables should be increased to $6,000, with the increase charged as an administrative cost.\n- Plant and machinery is depreciated on a reducing balance basis at 20% per year. Depreciation is charged to cost of sales.\n- The income tax charge based on profit for the year is estimated at $15,000.",
+    requirements: [
+      {
+        label: "(a)",
+        marks: 6.5,
+        text: "Prepare the statement of profit or loss for Buzzard Co for the year ended 30 September 20X6, including the required calculations for cost of sales, administrative expenses and income tax.",
+      },
+      {
+        label: "(b)",
+        marks: 8.5,
+        text: "Prepare the statement of financial position of Buzzard Co as at 30 September 20X6, including the required calculations for inventories, receivables and income tax liability.",
+      },
+    ],
+    markingGuide:
+      "Profit or loss: revenue $360,250; cost of sales $173,750; gross profit $186,500; administrative expenses $70,800; distribution costs $42,815; profit before tax $72,885; income tax charge $14,000; profit after tax $58,885. Statement of financial position: PPE $121,480; inventories $22,000; receivables $41,450; total assets $184,930; share capital $20,000; retained earnings $119,885; trade and other payables $27,795; income tax liability $15,000; bank overdraft $2,250; total equity and liabilities $184,930. Workings include closing inventory at NRV adjustment, depreciation of $30,370, allowance increase of $3,500, and retained earnings after profit and dividend.",
   },
 ];
 
