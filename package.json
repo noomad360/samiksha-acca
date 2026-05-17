@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "postbuild": "node scripts/copy-client-build.mjs",
     "build:worker": "vite build",
     "publish:cf": "npm run build && wrangler publish",
     "build:dev": "vite build --mode development",
