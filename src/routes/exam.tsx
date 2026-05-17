@@ -13,7 +13,6 @@ export const Route = createFileRoute("/exam")({
     ],
   }),
   component: ExamPage,
-  ssr: false,
 });
 
 type Answer = string | string[] | number | null;
