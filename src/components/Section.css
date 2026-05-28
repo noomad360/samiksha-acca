@@ -1,0 +1,24 @@
+.section {
+  padding-top: var(--section-gap);
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin-bottom: 1.25rem;
+}
+
+.section-lead {
+  font-size: 1.125rem;
+  max-width: 52ch;
+  color: var(--text);
+}

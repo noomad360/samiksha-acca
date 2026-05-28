@@ -1,7 +1,0 @@
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=your-smtp-user@example.com
-SMTP_PASS=your-smtp-app-password
-SMTP_FROM=your-smtp-user@example.com
-RESULT_EMAIL_TO=saugat.codes@gmail.com

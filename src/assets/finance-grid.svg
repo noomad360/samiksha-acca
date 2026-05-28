@@ -1,0 +1,29 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" rx="40" fill="#13100D"/>
+  <rect x="34" y="34" width="1332" height="832" rx="30" fill="#1C1613" stroke="#E0B682" stroke-opacity="0.45" stroke-width="2"/>
+  <path d="M80 740H1320" stroke="#F1CC9D" stroke-opacity="0.3" stroke-width="2"/>
+  <path d="M80 620H1320" stroke="#F1CC9D" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M80 500H1320" stroke="#F1CC9D" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M80 380H1320" stroke="#F1CC9D" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M80 260H1320" stroke="#F1CC9D" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M220 120V780" stroke="#F1CC9D" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M460 120V780" stroke="#F1CC9D" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M700 120V780" stroke="#F1CC9D" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M940 120V780" stroke="#F1CC9D" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M1180 120V780" stroke="#F1CC9D" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M140 670C210 640 280 620 350 610C430 598 500 560 570 520C640 478 700 418 780 408C870 396 940 480 1010 452C1080 424 1140 280 1260 240" stroke="url(#paint0_linear)" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="350" cy="610" r="12" fill="#E3B87E"/>
+  <circle cx="570" cy="520" r="12" fill="#E3B87E"/>
+  <circle cx="780" cy="408" r="12" fill="#E3B87E"/>
+  <circle cx="1010" cy="452" r="12" fill="#E3B87E"/>
+  <circle cx="1260" cy="240" r="12" fill="#E3B87E"/>
+  <rect x="160" y="130" width="310" height="102" rx="18" fill="#2B211B" stroke="#E3B87E" stroke-opacity="0.35"/>
+  <text x="192" y="175" fill="#F7D6AD" font-size="28" font-family="Georgia, serif">Performance Trend</text>
+  <text x="192" y="210" fill="#C5A37C" font-size="20" font-family="Arial, sans-serif">FA Practice and analysis growth</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="140" y1="670" x2="1260" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E4BA80"/>
+      <stop offset="1" stop-color="#9E4E43"/>
+    </linearGradient>
+  </defs>
+</svg>
